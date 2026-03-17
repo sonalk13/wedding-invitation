@@ -1,0 +1,68 @@
+.section {
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  background: #fff7f2;
+}
+
+.card {
+  max-width: 700px;
+  text-align: center;
+  background: white;
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(28px, 4vw, 38px);
+  color: #8b1e3f;
+  margin-bottom: 25px;
+}
+
+.message {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.parents {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.grandparents {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.names {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(48px, 6vw, 64px);
+  color: #b76e79;
+  margin: 10px 0;
+}
+
+.with {
+  font-size: 18px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.footerText {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #555;
+}
+
+.ganesha {
+  object-fit: contain;
+}

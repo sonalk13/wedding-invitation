@@ -1,0 +1,53 @@
+body {
+  background: #fff7f2;
+
+  font-family: "Playfair Display", serif;
+}
+
+.hero {
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-image: url("/bride.jpg");
+
+  background-size: cover;
+
+  color: white;
+
+  text-align: center;
+}
+
+.title {
+  font-size: 80px;
+
+  color: #ffd700;
+}
+
+.subtitle {
+  font-size: 24px;
+}
+
+.timeline {
+  padding: 100px;
+
+  background: #fff;
+}
+
+.timeline-card {
+  background: white;
+
+  padding: 30px;
+
+  margin: 30px;
+
+  border-left: 4px solid gold;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
