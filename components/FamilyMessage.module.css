@@ -2,67 +2,127 @@
   padding: 120px 20px;
   display: flex;
   justify-content: center;
-  background: #fff7f2;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 20% 50%, #d4899a18 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, #b8883a11 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .card {
-  max-width: 700px;
+  max-width: 680px;
+  width: 100%;
   text-align: center;
-  background: white;
-  padding: 60px 40px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: var(--bg-card);
+  padding: 60px 44px;
+  border-radius: 24px;
+  border: 1px solid #b8883a33;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 20px 60px rgba(155, 58, 90, 0.1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    var(--rose),
+    transparent
+  );
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
 }
 
 .icon {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+}
+.ganesha {
+  object-fit: contain;
 }
 
 .heading {
   font-family: "Playfair Display", serif;
-  font-size: clamp(28px, 4vw, 38px);
-  color: #8b1e3f;
-  margin-bottom: 25px;
+  font-size: clamp(22px, 3.5vw, 30px);
+  color: var(--rose);
+  margin-bottom: 28px;
+  font-weight: 600;
 }
 
 .message {
-  font-size: 18px;
-  color: #555;
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--muted);
   margin-bottom: 10px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .parents {
-  font-size: 18px;
-  color: #333;
-  margin: 10px 0;
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--cream);
+  margin: 12px 0;
+  line-height: 1.8;
+}
+
+.parents b {
+  color: var(--rose-deep);
 }
 
 .grandparents {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 15px;
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.8;
 }
 
 .names {
   font-family: "Great Vibes", cursive;
-  font-size: clamp(48px, 6vw, 64px);
-  color: #b76e79;
-  margin: 10px 0;
+  font-size: clamp(52px, 7vw, 72px);
+  color: var(--rose);
+  margin: 8px 0;
+  line-height: 1.1;
+  text-shadow: 0 0 40px #d4899a44;
 }
 
 .with {
-  font-size: 18px;
-  color: #777;
-  margin: 5px 0;
+  font-size: 13px;
+  color: var(--gold);
+  margin: 4px 0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .footerText {
-  margin-top: 20px;
-  font-size: 17px;
-  color: #555;
+  margin-top: 24px;
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: var(--muted);
+  font-style: italic;
 }
 
-.ganesha {
-  object-fit: contain;
+@media (max-width: 600px) {
+  .card {
+    padding: 40px 24px;
+  }
 }

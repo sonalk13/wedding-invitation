@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import styles from "./FamilyMessage.module.css";
 import Image from "next/image";
+import { WEDDING_DETAILS } from "../constants/weddingDetails";
+import PetalRain from "./PetalRain";
+
 export default function FamilyMessage() {
   return (
     <section className={styles.section}>
@@ -17,12 +20,12 @@ export default function FamilyMessage() {
           <Image
             src="/lord-ganesha.png"
             alt="Lord Ganesha"
-            width={160}
-            height={160}
+            width={200}
+            height={200}
             className={styles.ganesha}
           />
         </div>
-
+        <PetalRain count={20} />
         <h2 className={styles.heading}>A Message from the Kesarwani Family</h2>
 
         <p className={styles.message}>
@@ -30,15 +33,16 @@ export default function FamilyMessage() {
         </p>
 
         <p className={styles.grandparents}>
-          Late Shri. Ravindra Nath Gupta <br />& Late Smt. Kewala Devi
+          {WEDDING_DETAILS.brideGrandParents} <br />&{" "}
+          {WEDDING_DETAILS.brideGrandParents2}
         </p>
 
         <p className={styles.message}>We</p>
 
         <p className={styles.parents}>
-          <b>Smt. Neeru Kesarwani</b> <br />
+          <b>{WEDDING_DETAILS.brideMother}</b> <br />
           & <br />
-          <b>Shri. S.K. Kesarwani</b>
+          <b>{WEDDING_DETAILS.brideFather}</b>
         </p>
 
         <p className={styles.message}>
@@ -46,20 +50,23 @@ export default function FamilyMessage() {
           daughter
         </p>
 
-        <h3 className={styles.names}>Sonal</h3>
+        <h3 className={styles.names}>{WEDDING_DETAILS.brideName}</h3>
 
         <p className={styles.with}>with</p>
 
-        <h3 className={styles.names}>Aman</h3>
+        <h3 className={styles.names}>{WEDDING_DETAILS.groomName}</h3>
 
         <p className={styles.parents}>
           Son of <br />
-          <b>Smt. Puspha Keshari & Shri. Anil Keshari</b>
+          <b>
+            {WEDDING_DETAILS.groomMother} & {WEDDING_DETAILS.groomFather}
+          </b>
         </p>
 
         <p className={styles.grandparents}>
           Grandson of <br />
-          Late Smt. Bela Devi <br />& Late Shri. Ram Sewak Keshri
+          {WEDDING_DETAILS.groomGrandParents} <br />&{" "}
+          {WEDDING_DETAILS.groomGrandParents2}
         </p>
 
         <p className={styles.footerText}>

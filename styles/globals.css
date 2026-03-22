@@ -1,53 +1,50 @@
+:root {
+  --bg: #fdf6ee;
+  --bg-surface: #f7ede0;
+  --bg-card: #fff8f0;
+  --rose: #9b3a5a;
+  --rose-deep: #7a2440;
+  --rose-light: #d4899a;
+  --gold: #b8883a;
+  --gold-light: #e8d5a3;
+  --cream: #3d2020;
+  --muted: #8a6060;
+  --white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
 body {
-  background: #fff7f2;
-
+  background-color: var(--bg);
+  color: var(--cream);
   font-family: "Playfair Display", serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-.hero {
-  height: 100vh;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  background-image: url("/bride.jpg");
-
-  background-size: cover;
-
-  color: white;
-
-  text-align: center;
+::selection {
+  background: var(--rose-light);
+  color: var(--white);
 }
 
-.title {
-  font-size: 80px;
-
-  color: #ffd700;
+::-webkit-scrollbar {
+  width: 5px;
 }
-
-.subtitle {
-  font-size: 24px;
+::-webkit-scrollbar-track {
+  background: var(--bg);
 }
-
-.timeline {
-  padding: 100px;
-
-  background: #fff;
-}
-
-.timeline-card {
-  background: white;
-
-  padding: 30px;
-
-  margin: 30px;
-
-  border-left: 4px solid gold;
-
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+::-webkit-scrollbar-thumb {
+  background: var(--rose);
+  border-radius: 3px;
 }

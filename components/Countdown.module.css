@@ -4,43 +4,89 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 80px 20px;
-  /* background: linear-gradient(135deg, #fff7f2, #fdeae7); */
-  /* background: rgb(255, 168, 187); */
-  background: white;
+  padding: 100px 20px;
+  background: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
 }
 
+/* .countdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #d4899a22 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 50% 100%, #b8883a11 0%, transparent 60%);
+  pointer-events: none;
+} */
+
 .title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #b76e79;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--rose);
+  margin-bottom: 12px;
   letter-spacing: 1px;
 }
 
 .timer {
   display: flex;
-  gap: 30px;
+  gap: 24px;
   justify-content: center;
-  margin-top: 20px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
 }
 
 .timeBox {
-  background: white;
-  padding: 25px 35px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: var(--bg-card);
+  border: 1px solid #b8883a44;
+  padding: 28px 36px;
+  border-radius: 16px;
+  min-width: 110px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  box-shadow: 0 8px 24px rgba(155, 58, 90, 0.1);
+}
+
+.timeBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.timeBox:hover {
+  transform: translateY(-4px);
+  border-color: #b8883a99;
 }
 
 .number {
-  font-size: 42px;
-  color: #8b1e3f;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 5vw, 52px);
+  color: var(--rose);
   margin: 0;
+  line-height: 1;
+  font-weight: 600;
 }
 
 .label {
-  margin-top: 5px;
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: #555;
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  .timeBox {
+    padding: 20px 24px;
+    min-width: 85px;
+  }
 }

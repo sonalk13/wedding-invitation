@@ -1,31 +1,60 @@
 .section {
   padding: 100px 20px;
   text-align: center;
-  background: #fff7f2;
+  background: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
 }
+
+/* .section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    #d4899a18 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+} */
+
 .heading {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #8b1e3f;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--rose);
+  margin-bottom: 8px;
 }
 
 .location {
-  font-size: 20px;
-  margin-bottom: 40px;
-  letter-spacing: 1px;
-  color: #555;
+  font-size: clamp(13px, 2vw, 16px);
+  margin-bottom: 48px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 .mapContainer {
   max-width: 900px;
   margin: auto;
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #b8883a44;
+  box-shadow:
+    0 0 0 4px #b8883a11,
+    0 20px 60px rgba(155, 58, 90, 0.15);
+  position: relative;
+  z-index: 1;
 }
 
 .map {
   width: 100%;
   height: 450px;
   border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 300px;
+  }
 }

@@ -17,7 +17,7 @@ export default function WeddingEvents({ type }) {
       time: "9 AM",
       venue: "Our Residence",
       icon: <Home size={28} className="text-rose-500" />,
-      color: "#ffde42",
+      color: "#fcf2ed",
     },
     {
       title: "Haldi & Sangeet",
@@ -25,7 +25,7 @@ export default function WeddingEvents({ type }) {
       time: "4 PM",
       venue: "Hotel Grand INN",
       icon: <Music size={28} className="text-amber-500" />,
-      color: "darkyellow",
+      color: "#ffde42",
     },
     {
       title: "Mehendi",

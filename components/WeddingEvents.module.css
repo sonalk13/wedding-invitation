@@ -1,127 +1,204 @@
 .section {
   padding: 120px 20px;
   text-align: center;
-  /* background: #fff7f2; */
-  background: rgb(208, 169, 196);
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 40% at 50% 50%,
+    #d4899a12 0%,
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .heading {
-  font-size: clamp(28px, 4vw, 40px);
-  margin-bottom: 60px;
-  color: #8b1e3f;
-  font-family: "Playfair Display", serif;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--rose);
+  margin-bottom: 16px;
 }
 
-/* Rope line */
-
 .rope {
-  width: 100%;
-  height: 2px;
-  background: #333;
-  margin-bottom: 60px;
+  width: 80%;
+  max-width: 900px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    var(--rose-light),
+    var(--gold),
+    transparent
+  );
+  margin: 0 auto 60px;
   position: relative;
 }
 
-/* Container */
+.rope::before,
+.rope::after {
+  content: "✦";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.rope::before {
+  left: 0;
+}
+.rope::after {
+  right: 0;
+}
 
 .events {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 32px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
-/* Tag wrapper */
-
 .tag {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Hook */
-
 .hook {
-  width: 2px;
-  height: 30px;
-  background: #333;
-  margin-bottom: -10px;
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  margin-bottom: -2px;
 }
-
-/* Card */
 
 .card {
-  background: #ffde42;
-  padding: 25px 20px;
-  border-radius: 16px;
-  width: 200px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  padding: 28px 20px;
+  border-radius: 18px;
+  width: 175px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: default;
+
+  /* Layered shadow for depth */
+  box-shadow:
+    0 2px 0px rgba(255, 255, 255, 0.6) inset,
+    /* top shine */ 0 -2px 0px rgba(0, 0, 0, 0.08) inset,
+    /* bottom shadow */ 0 8px 20px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Border that uses the card color darkened */
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Hover animation */
+/* Shine overlay */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border-radius: 18px 18px 50% 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Noise texture */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
 
 .card:hover {
-  transform: translateY(-8px) rotate(-1deg);
+  transform: translateY(-10px) rotate(-1.5deg);
+  box-shadow:
+    0 2px 0px rgba(255, 255, 255, 0.6) inset,
+    0 -2px 0px rgba(0, 0, 0, 0.08) inset,
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Icon */
-
-.icon {
-  margin-bottom: 10px;
+/* Keep text above overlays */
+.icon,
+.title,
+.date,
+.time,
+.venue {
+  position: relative;
+  z-index: 2;
 }
-
-/* Title */
-
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: #222;
-}
-/* Event title */
 
 .title {
-  font-size: clamp(18px, 2.5vw, 22px);
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #222;
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.75);
   font-family: "Playfair Display", serif;
-  letter-spacing: 0.5px;
+  margin-bottom: 8px;
 }
-
-/* Date */
 
 .date {
-  font-size: clamp(14px, 2vw, 16px);
-  color: #444;
-  margin-bottom: 4px;
-  font-weight: 500;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 3px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
-
-/* Time */
 
 .time {
-  font-size: clamp(14px, 2vw, 15px);
-  color: #666;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
   margin-bottom: 6px;
 }
-/* Venue */
 
 .venue {
-  font-weight: 600;
-  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
-/* Mobile */
+.icon {
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* Hook thread */
+.hook {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, #b8883a, #d4a76a55);
+  margin-bottom: -2px;
+}
 
 @media (max-width: 768px) {
   .events {
-    gap: 30px;
+    gap: 20px;
   }
-
   .card {
-    width: 160px;
-    padding: 20px;
+    width: 145px;
+    padding: 20px 14px;
   }
 }
