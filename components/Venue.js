@@ -1,13 +1,14 @@
 "use client";
 
 import styles from "./Venue.module.css";
+import { WEDDING_DETAILS } from "../constants/weddingDetails";
 
 export default function Venue() {
   return (
     <section className={styles.section}>
       <h2 className={styles.heading}>Wedding Venue</h2>
 
-      <p className={styles.location}>Jashn Resort, Lucknow</p>
+      <p className={styles.location}>{WEDDING_DETAILS.weddingVenue}</p>
 
       <div className={styles.mapContainer}>
         <iframe

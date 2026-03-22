@@ -1,5 +1,12 @@
 import "./globals.css";
-
+export const metadata = {
+  title: "Sonal & Aman Wedding 💍",
+  description:
+    "With love, we invite you to celebrate our wedding on 21 April 2026 ❤️",
+  icons: {
+    icon: "/icon.jpeg",
+  },
+};
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

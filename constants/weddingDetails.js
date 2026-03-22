@@ -9,7 +9,7 @@ export const WEDDING_DETAILS = {
 
   // Wedding Info
   weddingDate: "21st April 2026",
-  weddingVenue: "Jashn Resort, Lucknow",
+  weddingVenue: "Jashn Resort, Deva Rd, near NEDA, Chinhat, Lucknow",
   weddingTime: "7:00 PM onwards",
   weddingLocation: "Lucknow",
 
